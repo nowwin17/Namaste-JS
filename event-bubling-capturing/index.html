@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Namaste JS</title>
+        <style>
+            div{
+                min-width: 100px;
+                min-height: 100px;
+                padding: 30px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Namaste JavaScript</h1>
+        <h2>Event Bubbling and Event Capturing(trickling)</h2>
+       <div id="grandparent">
+        <div id="parent">
+            <div id="child">
+        
+            </div>
+       </div>
+       </div>
+       <p>You can see there is three div in heirarchy and attached click event to all of them. </p>
+       <code>
+        document.querySelector("#<id>")
+.addEventListener('click',()=>{
+    console.log("clicked");
+}, <use capture>);
+       </code>
+<p> we can add event listener on click so it has three parameters</p>
+<ol>
+    <li>Event (in this case its 'click'</li>
+    <li>Callback function(when event occurs it will execute function)</li>
+    <li>Boolean(use capture) value(It will decide hows event propogating(bubling or capturing))</li>
+</ol>
+<p>If we not passed any value to boolean then it takes default value i.e. false</p>
+<code>
+    document.querySelector("#<id>")
+.addEventListener('click',()=>{
+console.log("clicked");
+});
+   </code>
+   <p>If it is false then event propogating like down to up which is called <b>Event Bubbling</b>  </p>
+   <p>If we passed 'true'  value to boolean</p>
+   <code>
+       document.querySelector("#<id>")
+   .addEventListener('click',()=>{
+   console.log("clicked");
+   }, true);
+      </code>
+      <p>If it is true then event propogating like up to down which is called <b>Event Capturing </b> or <b>Event Trickling </b> </p>
+          <script src="./index.js"></script>
+    </body>
+</html>

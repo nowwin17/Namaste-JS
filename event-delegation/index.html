@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Namaste JS</title>
+    </head>
+    <body>
+        <h1>Namaste JavaScript</h1>
+        <h2>Event Delegation</h2>
+        <p>It is possible due to Event Bubbling(event propogates down-up).</p>
+        <div>
+            <ul id="category">
+                <li id="laptops">Laptops</li>
+                <li id="cameras">Cameras</li>
+                <li id="mobiles">Mobiles</li>
+            </ul>
+        </div>
+        <p> In the above example you can see unorder list ul has three child element but in real scenario it could be 100 or any huge number. So, attach event to each child cause performance issue so instead of adding event handler or listener to each child ,add event handler to it parent i.e. "category".
+           Suppose you clicked on any child then in event listner attached to parent element capture event and send it to all event info in event object.So in this way we will capture which child event has been clicked and perform our operation on it. 
+        </p>
+        <div id="form">
+            <input type="text" id="name" data-uppercase>
+            <input type="text" id="pan">
+            <input type="text" id="mobile" data-uppercase>
+        </div>
+        <p>Similarly,In the above example you can see 
+            input text boxes we want to make some input values in uppercase
+            so instead of attach event on each child we define dataset i.e. data-uppercase
+            and attach event on parent i.e. "form" and check dataset.uppercase
+         </p>
+         <code>
+            document.querySelector("#form")
+.addEventListener('click',(e)=>{
+    if(e.target.dataset.uppercase != undefined){ //check if anyelement has that dataset "uppercase"
+        e.target.value = e.target.value.toUpperCase();//change input value to uppercase
+    }
+});
+         </code>
+         <h4>Benefits</h4>
+         <ol>
+            <li>
+                Memory Saving
+            </li>
+            <li>
+                Write less code
+            </li>
+            <li>
+                DOM maninpulation(when child element dynamically added)
+            </li>
+         </ol>
+         <h4>Limitation</h4>
+         <ol>
+            <li>
+                They are some event(like blur, focus, resizing etc) are not bubbled up so we can't use event delegation at that time.
+            </li>
+            <li>
+               It can't be used with e.stopPropagation() because it stops events propogation. 
+            </li>
+         </ol>
+         
+        <script src="./index.js"></script>
+    </body>
+</html>
