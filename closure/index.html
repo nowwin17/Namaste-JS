@@ -20,7 +20,17 @@
 </p>        
 <b>Disadvantage</b>
 <p>
+    While closures have many advantages in programming, there are also some potential disadvantages to consider:
+</p>
+    <p>Memory Leaks: Closures can create memory leaks if they are not used carefully. Since closures retain references to their outer variables and functions, they can prevent those variables and functions from being garbage collected even if they are no longer needed. This can lead to an increase in memory usage and can cause performance issues if left unchecked.</p>
     
+    <p>Code Complexity: Closures can make code more difficult to understand and maintain, especially if they are nested or used excessively. Closures can create implicit dependencies between different parts of the code, making it harder to reason about the program as a whole.
+    </p>
+   <p> Performance Overhead: Closures can have a performance overhead, especially if they are used in tight loops or in performance-critical code. Since closures involve creating new functions and retaining references to variables and functions in memory, they can be slower than other approaches that avoid closures.
+   </p>
+   <p> Security Risks: Closures can create security risks if they are used improperly. If a closure has access to sensitive data or functions, it can potentially be exploited by malicious code to gain access to that data or execute unauthorized actions.
+   </p>
+   <p> Overall, while closures can be a useful tool in programming, they should be used with care and only when necessary. Developers should be mindful of the potential disadvantages of closures and should strive to use them in a way that minimizes their impact on performance, code complexity, and security.  
 </p>
         <script src="./index.js"></script>
     </body>
