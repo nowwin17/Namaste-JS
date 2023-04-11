@@ -54,7 +54,62 @@ console.log(obj);
 
 console.log(frequency);
 
+const arrFreq = [1, 2, 2, 3, 3, 3, -2];
+const freq = {};
+
+for (let i = 0; i < arr.length; i++) {
+  const num = arrFreq[i];
+  freq[num] = freq[num] ? freq[num] + 1 : 1;
+}
+
+console.log(freq); // Output: { '1': 1, '2': 2, '3': 3, '-2': 1 }
+
+
+
 /***FLaten Infinite levels of array */
 var nestedArr = [11, [22, 33,[8,9]], [44, 55], [66, 77], 88, 99];
 var flatArr = arr.flat(Infinity);
-console.log(flatArr); // [11, 22, 33, 8, 9, 44, 55, 66, 77, 88, 99]
+console.log(flatArr); // [11, 22, 33, 8, 9, 44, 55, 66, 77, 88, 99]const output = users.map((user) => {
+
+
+let users = [
+   {name: "vineet",age: 25,},{name: "deepak",age: 30,},{name: "gaurav",age: 20,},
+ ];
+
+/**Update user age by 1 */
+const output1 = users.map((user) => {
+   return {
+     ...user,
+     age: user.age + 1,
+   };
+ });
+ console.log(output1)
+
+ /**SOrt user by age */
+ 
+ users.sort((a, b) => a.age - b.age);
+ console.log(users);
+
+ const a = [4, 3, 6, 3, 4, 3];
+ const freq1 = {};
+ 
+ for (let i = 0; i < a.length; i++) {
+   const num = a[i];
+   freq1[num] = freq1[num] ? freq1[num] + 1 : 1;
+ }
+ 
+ /**Get array of element whose frequency greater than 1 */
+ const repeated_elements = Object.keys(freq1).filter(num => freq1[num] > 1);
+ 
+ console.log(repeated_elements);
+ /**Get array of element which are unique */
+ 
+ const unique_element = Object.keys(freq1).filter(num => freq1[num] === 1);
+console.log(unique_element);
+
+/**Find duplicate number in a array  */
+const duplicates = a.filter((item, index) => {
+  return a.indexOf(item) !== index;
+});
+
+console.log(duplicates); // [3, 4]

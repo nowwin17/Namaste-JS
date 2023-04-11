@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Namaste JS</title>
+    </head>
+    <body>
+        <h1>Call, Apply Bind Methods</h1>
+        <br/>
+        <h2>Call</h2>
+        <p> Binds "this" value, invokes the function and allow us to pass list of aguments</p>
+        <p>e.g.</p>
+        <pre>
+            <code>
+              function test(arg1, arg2){
+                console.log(this.num, arg1, arg2);
+              }
+              var obj = { num: 100 };
+              test.call(obj, 10, 20);
+            </code>
+          </pre>
+          
+        <br/>
+        <h2>Apply </h2>
+        <p> Bind "this" value, invokes the function and allow us to pass list of aguments as an array</p>
+        <p>e.g.</p>
+        <pre>
+            <code>
+              function test(...arg){
+                console.log(this.num, arg);
+              }
+              var obj = { num: 100 };
+              test.apply(obj, [10, 20,30]);
+            </code>
+          </pre>
+          
+        <br/>
+        <h2>Bind</h2>
+        <p> Binds "this" value, returns a new function and allow us to pass list of aguments</p>
+        <p>e.g.</p>
+        <pre>
+            <code>
+              function test(arg){
+                console.log(this.num, arg);
+              }
+              var obj = { num: 100 };
+              let bindedFn= test.bind(obj,"arguments");
+              bindedFn()
+            </code>
+          </pre>
+          <br/>
+          <b>All three methods set "this" argument to the function 
+            <p>->The Call & Apply methods set "this" to function & call function</p>
+            <p>->The Bind method will only set "this" to function and we will need to seperately invoke function</p>
+          </b>
+        <script src="./index.js"></script>
+    </body>
+</html>
